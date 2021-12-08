@@ -1,0 +1,132 @@
+/* =========== RESET =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(
+    to right,
+    hsla(245, 100%, 50%, 1),
+    hsla(222, 79%, 48%, 1),
+    hsla(227, 80%, 37%, 1),
+    hsla(232, 83%, 14%, 1),
+    hsla(245, 79%, 15%, 1)
+  );
+}
+#header {
+  display: fixed;
+}
+grid {
+  display: grid;
+}
+
+/* =========== HEADER =========================== */
+#header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.31rem 5.68rem;
+}
+
+#header .logo img {
+  height: 4rem;
+}
+#header nav .menu lu {
+  list-style: none;
+}
+
+#header nav li {
+  display: inline-flex;
+  margin-left: 3.125rem;
+  list-style: none;
+}
+#header nav .menu a {
+  font-size: 1rem;
+}
+#header nav .menu a.bottom {
+  background-color: rgba(255, 206, 31, 1);
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+}
+#inicio {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+#inicio .social {
+  order: 1;
+}
+#inicio .text {
+  order: 2;
+  max-width: 27.25rem;
+  /* margin-top: 5rem */
+}
+
+#inicio .text p {
+  color: rgba(255, 206, 31, 1);
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 4px;
+}
+#inicio .text p::before {
+  content: ' ';
+  background-color: rgba(255, 206, 31, 1);
+  display: inline-block;
+  height: 2px;
+  width: 30%;
+}
+
+#inicio .text h1 {
+  text-align: justify;
+  font-size: 3.5rem;
+  color: rgba(235, 235, 235, 0.644);
+}
+#inicio .text h1 span {
+  color: rgba(235, 235, 235, 1);
+}
+
+#inicio .text a.bottom {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(255, 206, 31, 1);
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+#inicio .image {
+  order: 3;
+  max-width: 22rem;
+  margin-right: 5rem;
+}
+
+#inicio .image h2 {
+  text-align: right;
+  color: rgba(235, 235, 235, 1);
+}
+#inicio .image h2::before {
+  content: '+';
+  color: rgba(255, 206, 31, 1);
+}
+#inicio .image img {
+  width: 23rem;
+}
+#inicio .image p {
+  color: rgba(235, 235, 235, 1);
+  font-size: 1.1rem;
+}
+#inicio .image p span {
+  color: rgba(255, 206, 31, 1);
+}
