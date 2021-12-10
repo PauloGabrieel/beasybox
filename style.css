@@ -21,8 +21,49 @@ body {
     hsla(245, 79%, 15%, 1)
   );
 }
+.divider-1 {
+  height: 0.2px;
+  background: #ebebeb;
+}
+.text-yellow {
+  color: rgba(255, 206, 31, 1);
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 4px;
+}
+.text-yellow::before {
+  content: ' ';
+  background-color: rgba(255, 206, 31, 1);
+  display: inline-block;
+  height: 2px;
+  width: 30%;
+}
+
+.tittle {
+  color: rgba(235, 235, 235, 1);
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+}
+.bottom {
+  background-color: rgba(255, 206, 31, 1);
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: background 0.3s;
+  /* position: relative;
+  top: 4rem;
+  left: 8rem; */
+}
+.bottom:hover {
+  background-color: hsla(245, 79%, 15%, 1);
+  display: inline-block;
+  color: rgba(255, 206, 31, 1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+}
 #header {
-  display: fixed;
 }
 grid {
   display: grid;
@@ -47,22 +88,42 @@ grid {
   display: inline-flex;
   margin-left: 3.125rem;
   list-style: none;
+  position: relative;
+}
+#header nav .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header nav .menu .bottom {
+  margin-left: 3.125rem;
 }
 #header nav .menu a {
   font-size: 1rem;
 }
-#header nav .menu a.bottom {
-  background-color: rgba(255, 206, 31, 1);
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  border-radius: 2rem;
-  font-weight: 700;
+#header nav .menu ul a:hover {
+  color: rgba(255, 206, 31, 1);
 }
+#header nav .menu ul a::after {
+  content: '';
+  height: 2px;
+  width: 0%;
+  background-color: rgba(255, 206, 31, 1);
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  transition: width 0.2s;
+}
+#header nav .menu ul a:hover::after {
+  width: 100%;
+}
+
 #inicio {
   display: grid;
   grid-auto-flow: column;
-  justify-content: space-between;
-  margin-top: 5rem;
+  justify-content: space-around;
+  /*  margin-top: 5rem; */
+  padding: 4rem;
 }
 
 #inicio .social {
@@ -72,20 +133,6 @@ grid {
   order: 2;
   max-width: 27.25rem;
   /* margin-top: 5rem */
-}
-
-#inicio .text p {
-  color: rgba(255, 206, 31, 1);
-  font-size: 0.8rem;
-  margin-bottom: 2.5rem;
-  letter-spacing: 4px;
-}
-#inicio .text p::before {
-  content: ' ';
-  background-color: rgba(255, 206, 31, 1);
-  display: inline-block;
-  height: 2px;
-  width: 30%;
 }
 
 #inicio .text h1 {
@@ -128,5 +175,162 @@ grid {
   font-size: 1.1rem;
 }
 #inicio .image p span {
+  color: rgba(255, 206, 31, 1);
+}
+#meio {
+}
+#meio .cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem;
+}
+#meio .card {
+  max-width: 18rem;
+}
+#meio .card img {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+#card-3 img {
+  width: 100px;
+}
+#meio .card h2 {
+  text-align: justify;
+  color: rgba(255, 206, 31, 1);
+  margin-bottom: 0.5rem;
+}
+#meio .card p {
+  text-align: justify;
+  color: rgba(235, 235, 235, 1);
+}
+#meio .desenvolvimento {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 5rem;
+  background-color: hsla(227, 80%, 37%, 1);
+}
+#meio .desenvolvimento .image {
+  max-width: 30rem;
+  font-size: 0.9rem;
+}
+#meio .desenvolvimento .image img {
+  display: block;
+  width: 14rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+#meio .desenvolvimento .image p {
+  color: rgba(235, 235, 235, 0.644);
+  margin-bottom: 1rem;
+}
+#meio .desenvolvimento .text {
+  max-width: 31rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+#meio .desenvolvimento .text p {
+  color: rgba(235, 235, 235, 0.644);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+#meio .desenvolvimento .text p.text-yellow {
+  color: rgba(255, 206, 31, 1);
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 4px;
+}
+#meio .desenvolvimento .text .bottom {
+  position: relative;
+  top: 4rem;
+  left: 8rem;
+}
+
+#sobre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem;
+}
+
+#sobre .text {
+  max-width: 26rem;
+}
+
+#sobre .text p {
+  color: rgba(235, 235, 235, 0.644);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+#sobre .text p.text-yellow {
+  color: rgba(255, 206, 31, 1);
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 4px;
+}
+#sobre .text p strong {
+  color: rgba(235, 235, 235, 1);
+}
+#sobre .text address {
+  color: rgba(255, 206, 31, 1);
+  font-weight: bold;
+}
+#sobre .text .bottom {
+  margin-top: 3rem;
+  margin-left: 6rem;
+}
+#sobre .text .bottom-2 {
+  display: inline-block;
+  background-color: hsla(223, 7%, 19%, 1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: background 0.3s;
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
+#sobre .image img {
+  width: 27rem;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10rem 5rem;
+}
+#contact .text {
+  max-width: 34rem;
+}
+#contact .text h2 {
+  font-size: 2.5rem;
+}
+#contact .text p {
+  max-width: 28rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: rgba(235, 235, 235, 0.644);
+}
+
+#contact .text a {
+  background: hsla(137, 88%, 38%, 1);
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  margin-top: 3rem;
+}
+
+#contact .contacts p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+}
+#contact .contacts i {
   color: rgba(255, 206, 31, 1);
 }
