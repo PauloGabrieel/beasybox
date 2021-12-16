@@ -14,19 +14,21 @@
     <title>beasybox</title>
   </head>
   <body>
-    <header id="header">
-      <nav>
+    <header id="header" class="">
+      <nav class="">
         <div class="logo">
           <img src="./images/Logo BeasyBox.svg" alt="Logo da empresa" />
         </div>
         <div class="menu">
-          <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="#">Contato</a></li>
+          <ul class="grid">
+            <li class=""><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
           <a href="#" class="bottom">Quero mais Pacientes</a>
         </div>
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
       </nav>
     </header>
     <main>
@@ -156,11 +158,42 @@
           >
         </div>
         <div class="contacts">
-          <p><i class="icon-phone"></i><span>+55 51</span> 1001 - 5555</p>
-          <p><i class="icon-mail"></i>beasybox@box.com</p>
-          <p><i class="icon-map-pin"></i>Porto Alegre, RS</p>
+          <div class="contact-grid">
+            <img src="./images/phone1.svg" alt="telefone" id="phone" />
+            <p><span>+55 51</span> 1001 - 5555</p>
+          </div>
+          <div class="contact-grid">
+            <img src="./images/mail.svg" alt="email" id="mail" />
+            <p>beasybox@box.com</p>
+          </div>
+          <div class="contact-grid">
+            <img src="./images/place.svg" alt="localização" id="local" />
+            <p>Porto Alegre, RS</p>
+          </div>
         </div>
       </section>
     </main>
+    <footer>
+      <div class="container">
+        <div class="brand">
+          <img src="./images/Logo BeasyBox (1).svg" alt="logo" />
+          <p>&copy;<span>2021</span><strong> Beasybox.</strong></p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+        <div class="social">
+          <p>Nossa redes:</p>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><img src="./images/instagram.svg" alt="instagram"
+          /></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><img src="./images/facebook.svg" alt="Facebook"
+          /></a>
+          <a href=""
+            ><img src="./images/telegram.svg" alt="telegram" id="telegram"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
   </body>
 </html>

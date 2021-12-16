@@ -9,7 +9,9 @@ a {
   text-decoration: none;
   color: white;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Roboto', sans-serif;
   background-image: linear-gradient(
@@ -64,9 +66,28 @@ body {
   font-weight: 700;
 }
 #header {
+  position: fixed;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    hsla(245, 100%, 50%, 1),
+    hsla(222, 79%, 48%, 1),
+    hsla(227, 80%, 37%, 1),
+    hsla(232, 83%, 14%, 1),
+    hsla(245, 79%, 15%, 1)
+  );
+  z-index: 100;
 }
-grid {
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.247);
+}
+.contact-grid {
   display: grid;
+  grid-auto-flow: column;
+  width: fit-content;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 /* =========== HEADER =========================== */
@@ -74,7 +95,8 @@ grid {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.31rem 5.68rem;
+  padding: 0 5.68rem;
+  height: 6rem;
 }
 
 #header .logo img {
@@ -101,9 +123,11 @@ grid {
 #header nav .menu a {
   font-size: 1rem;
 }
+.active,
 #header nav .menu ul a:hover {
   color: rgba(255, 206, 31, 1);
 }
+
 #header nav .menu ul a::after {
   content: '';
   height: 2px;
@@ -114,6 +138,11 @@ grid {
   bottom: -0.5rem;
   transition: width 0.2s;
 }
+#header nav .icon-menu,
+#header nav .icon-close {
+  display: none;
+}
+#header nav .menu ul a.active::after,
 #header nav .menu ul a:hover::after {
   width: 100%;
 }
@@ -177,8 +206,7 @@ grid {
 #inicio .image p span {
   color: rgba(255, 206, 31, 1);
 }
-#meio {
-}
+
 #meio .cards {
   display: flex;
   justify-content: space-between;
@@ -294,6 +322,16 @@ grid {
   margin-top: 4rem;
   margin-left: 3rem;
 }
+#sobre .text .bottom-2:hover {
+  display: inline-block;
+  background-color: hsla(245, 79%, 15%, 1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: background 0.3s;
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
 #sobre .image img {
   width: 27rem;
 }
@@ -324,13 +362,121 @@ grid {
   border-radius: 2rem;
   font-weight: 700;
   margin-top: 3rem;
+  text-align: center;
+}
+
+#contact .contacts {
+  margin-top: 2.5rem;
 }
 
 #contact .contacts p {
   font-size: 2rem;
   margin-bottom: 2rem;
   margin-right: 5rem;
+  font-weight: 700;
+  color: rgba(235, 235, 235, 0.644);
 }
-#contact .contacts i {
-  color: rgba(255, 206, 31, 1);
+#contact .contacts p span {
+  color: rgba(235, 235, 235, 1);
+}
+
+#contact .contacts .contact-grid p {
+  margin: 0;
+}
+#contact .contacts .contact-grid img#phone {
+  width: 35px;
+}
+
+.container {
+  margin: 0;
+  background-color: hsla(47, 100%, 56%, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 5rem;
+}
+
+.container .brand img {
+  margin-bottom: 1rem;
+}
+.container .brand p {
+  margin-bottom: 0.5rem;
+}
+
+.container .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .social p {
+  margin-right: 2rem;
+}
+.container .social a {
+  margin-left: 2rem;
+  transition: 0.2s;
+}
+.container .social a:hover {
+  transform: translateY(-3px);
+}
+.container .social a img#telegram {
+  width: 75px;
+}
+
+@media (max-width: 510px) {
+  #header nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #header .logo img {
+    width: 8.125rem;
+  }
+  nav .menu {
+    opacity: 0;
+    visibility: visible;
+    top: -20rem;
+  }
+  nav .menu ul {
+    display: none;
+  }
+
+  /* mostrar menu*/
+
+  #header nav.show .menu {
+    opacity: 1;
+    visibility: visible;
+    background: hsla(47, 100%, 56%, 1);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    place-content: center;
+  }
+
+  #header nav.show .menu ul {
+    display: grid;
+  }
+  #header nav.show ul.grid {
+    gap: 4rem;
+  }
+  #header nav.show .menu .bottom {
+    margin: 0;
+  }
+
+  #header nav .icon-menu {
+    font-size: 1.5rem;
+    color: rgba(255, 206, 31, 1);
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  #header nav .icon-close {
+    opacity: 0;
+  }
 }
